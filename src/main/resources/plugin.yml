@@ -2,3 +2,5 @@ name: Skywars
 version: 0.1
 main: fr.cyberdelta88.skywars.Main
 author: cyberdelta88
+commands:
+  team:
