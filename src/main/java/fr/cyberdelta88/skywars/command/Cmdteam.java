@@ -73,7 +73,7 @@ public class Cmdteam implements CommandExecutor {
 
 
             gui.setItem(2, red);
-            gui.setItem(1, blue);
+            gui.setItem(0, blue);
             gui.setItem(3, green);
             gui.setItem(4, purple);
             gui.setItem(5, yellow);
