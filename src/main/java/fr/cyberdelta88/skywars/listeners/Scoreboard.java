@@ -1,12 +1,16 @@
 package fr.cyberdelta88.skywars.listeners;
 
+import fr.cyberdelta88.skywars.Main;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.scoreboard.*;
 
 public class Scoreboard implements Listener {
+
+    Plugin pl = Main.getPlugin(Main.class);
 
     public void createscorenoard(Player p) {
         ScoreboardManager manager = Bukkit.getScoreboardManager();
@@ -60,8 +64,11 @@ public class Scoreboard implements Listener {
 
         obj.setDisplaySlot(DisplaySlot.SIDEBAR);
         Score emptyscore = obj.getScore(" ");
-        Score s2 = obj.getScore("Number of Player : " + "0");
+        Score s2 = obj.getScore("Number of Player : " + pl.getConfig().getInt("playersremaining"));
 
+        emptyscore.setScore(2);
+        s2.setScore(1);
 
+        p.setScoreboard(sb);
     }
 }

@@ -15,11 +15,13 @@ public class Main extends JavaPlugin {
 
         this.getCommand("team").setExecutor(new Cmdteam());
 
-
         getServer().getPluginManager().registerEvents(new GuiClickEvent(), this);
 
 
         getServer().getScoreboardManager().getNewScoreboard();
+
+        getConfig().options().copyDefaults();
+        saveDefaultConfig();
     }
 
     @Override
