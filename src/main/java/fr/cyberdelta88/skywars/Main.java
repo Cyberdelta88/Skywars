@@ -9,7 +9,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class Main extends JavaPlugin {
     @Override
     public void onEnable() {
-        Bukkit.getConsoleSender().sendMessage(ChatColor.DARK_PURPLE + "The skywars plugin was succesfully launched \n" +
+        Bukkit.getConsoleSender().sendMessage(ChatColor.DARK_PURPLE + " \n The skywars plugin was succesfully launched \n" +
                 ChatColor.LIGHT_PURPLE + "Thank you for using this plugin");
 
 
