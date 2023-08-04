@@ -91,38 +91,242 @@ public class GuiClickEvent implements Listener {
 
 
                 case "Red" :
-                    p.sendMessage("You joined red team");
-                    Bukkit.broadcastMessage(p.getName() + " joined" + ChatColor.RED + " RED " + ChatColor.WHITE + "team");
+                    
+                    if (checkredteam(p) == true) {
+                        red.getEntries().remove(p);
+                        p.sendMessage("You leaved red team");
+                    } else if (checkblueteam(p) == true) {
+                        blue.getEntries().remove(p);
+                        red.addPlayer(p);
+                        p.sendMessage("You joined red team");
+                        Bukkit.broadcastMessage(p.getName() + " joined" + ChatColor.RED + " RED " + ChatColor.WHITE + "team");
+                    } else if (checkgreenteam(p) == true) {
+                        green.getEntries().remove(p);
+                        red.addPlayer(p);
+                        p.sendMessage("You joined red team");
+                        Bukkit.broadcastMessage(p.getName() + " joined" + ChatColor.RED + " RED " + ChatColor.WHITE + "team");
+                    } else if (checkpurpleteam(p) == true) {
+                        purple.getEntries().remove(p);
+                        red.addPlayer(p);
+                        p.sendMessage("You joined red team");
+                        Bukkit.broadcastMessage(p.getName() + " joined" + ChatColor.RED + " RED " + ChatColor.WHITE + "team");
+                    } else if (checkyellowteam(p) == true) {
+                        yellow.getEntries().remove(p);
+                        red.addPlayer(p);
+                        p.sendMessage("You joined red team");
+                        Bukkit.broadcastMessage(p.getName() + " joined" + ChatColor.RED + " RED " + ChatColor.WHITE + "team");
+                    } else if (checkwhiteteam(p) == true) {
+                        white.getEntries().remove(p);
+                        red.addPlayer(p);
+                        p.sendMessage("You joined red team");
+                        Bukkit.broadcastMessage(p.getName() + " joined" + ChatColor.RED + " RED " + ChatColor.WHITE + "team");
+                    } else {
+                        red.addPlayer(p);
+                        p.sendMessage("You joined red team");
+                        Bukkit.broadcastMessage(p.getName() + " joined" + ChatColor.RED + " RED " + ChatColor.WHITE + "team");
+                    }
+
+
                     p.closeInventory();
                     break;
 
                 case "Blue" :
-                    p.sendMessage("You joined red team");
-                    Bukkit.broadcastMessage(p.getName() + " joined" + ChatColor.BLUE + " BLUE " + ChatColor.WHITE + "team");
+
+                    if (checkblueteam(p) == true) {
+                        red.getEntries().remove(p);
+                        p.sendMessage("You leaved blue team");
+                    } else if (checkredteam(p) == true) {
+                        red.getEntries().remove(p);
+                        blue.addPlayer(p);
+                        p.sendMessage("You joined blue team");
+                        Bukkit.broadcastMessage(p.getName() + " joined" + ChatColor.BLUE + " BLUE " + ChatColor.WHITE + "team");
+                    } else if (checkgreenteam(p) == true) {
+                        green.getEntries().remove(p);
+                        blue.addPlayer(p);
+                        p.sendMessage("You joined blue team");
+                        Bukkit.broadcastMessage(p.getName() + " joined" + ChatColor.BLUE + " BLUE " + ChatColor.WHITE + "team");
+                    } else if (checkpurpleteam(p) == true) {
+                        purple.getEntries().remove(p);
+                        blue.addPlayer(p);
+                        p.sendMessage("You joined blue team");
+                        Bukkit.broadcastMessage(p.getName() + " joined" + ChatColor.BLUE + " BLUE " + ChatColor.WHITE + "team");
+                    } else if (checkyellowteam(p) == true) {
+                        yellow.getEntries().remove(p);
+                        blue.addPlayer(p);
+                        p.sendMessage("You joined blue team");
+                        Bukkit.broadcastMessage(p.getName() + " joined" + ChatColor.BLUE + " BLUE " + ChatColor.WHITE + "team");
+                    } else if (checkwhiteteam(p) == true) {
+                        white.getEntries().remove(p);
+                        blue.addPlayer(p);
+                        p.sendMessage("You joined blue team");
+                        Bukkit.broadcastMessage(p.getName() + " joined" + ChatColor.BLUE + " BLUE " + ChatColor.WHITE + "team");
+                    } else {
+                        blue.addPlayer(p);
+                        p.sendMessage("You joined blue team");
+                        Bukkit.broadcastMessage(p.getName() + " joined" + ChatColor.BLUE + " BLUE " + ChatColor.WHITE + "team");
+                    }
+
+
                     p.closeInventory();
                     break;
 
                 case "Green" :
-                    p.sendMessage("You joined green team");
-                    Bukkit.broadcastMessage(p.getName() + " joined" + ChatColor.GREEN + " GREEN " + ChatColor.WHITE + "team");
+
+                    if (checkgreenteam(p) == true) {
+                        green.getEntries().remove(p);
+                        p.sendMessage("You leaved green team");
+                    } else if (checkblueteam(p) == true) {
+                        blue.getEntries().remove(p);
+                        green.addPlayer(p);
+                        p.sendMessage("You joined green team");
+                        Bukkit.broadcastMessage(p.getName() + " joined" + ChatColor.GREEN + " GREEN " + ChatColor.WHITE + "team");;
+                    } else if (checkredteam(p) == true) {
+                        red.getEntries().remove(p);
+                        green.addPlayer(p);
+                        p.sendMessage("You joined green team");
+                        Bukkit.broadcastMessage(p.getName() + " joined" + ChatColor.GREEN + " GREEN " + ChatColor.WHITE + "team");
+                    } else if (checkpurpleteam(p) == true) {
+                        purple.getEntries().remove(p);
+                        green.addPlayer(p);
+                        p.sendMessage("You joined green team");
+                        Bukkit.broadcastMessage(p.getName() + " joined" + ChatColor.GREEN + " GREEN " + ChatColor.WHITE + "team");
+                    } else if (checkyellowteam(p) == true) {
+                        yellow.getEntries().remove(p);
+                        green.addPlayer(p);
+                        p.sendMessage("You joined green team");
+                        Bukkit.broadcastMessage(p.getName() + " joined" + ChatColor.GREEN + " GREEN " + ChatColor.WHITE + "team");
+                    } else if (checkwhiteteam(p) == true) {
+                        white.getEntries().remove(p);
+                        green.addPlayer(p);
+                        p.sendMessage("You joined green team");
+                        Bukkit.broadcastMessage(p.getName() + " joined" + ChatColor.GREEN + " GREEN " + ChatColor.WHITE + "team");;
+                    } else {
+                        green.addPlayer(p);
+                        p.sendMessage("You joined green team");
+                        Bukkit.broadcastMessage(p.getName() + " joined" + ChatColor.GREEN + " GREEN " + ChatColor.WHITE + "team");;
+                    }
+
+
                     p.closeInventory();
                     break;
 
                 case "Purple" :
-                    p.sendMessage("You joined purple team");
-                    Bukkit.broadcastMessage(p.getName() + " joined" + ChatColor.LIGHT_PURPLE + " PURPLE " + ChatColor.WHITE + "team");
+
+                    if (checkpurpleteam(p) == true) {
+                        purple.getEntries().remove(p);
+                        p.sendMessage("You leaved purple team");
+                    } else if (checkblueteam(p) == true) {
+                        blue.getEntries().remove(p);
+                        purple.addPlayer(p);
+                        p.sendMessage("You joined purple team");
+                        Bukkit.broadcastMessage(p.getName() + " joined" + ChatColor.LIGHT_PURPLE + " PURPLE " + ChatColor.WHITE + "team");
+                    } else if (checkgreenteam(p) == true) {
+                        green.getEntries().remove(p);
+                        purple.addPlayer(p);
+                        p.sendMessage("You joined purple team");
+                        Bukkit.broadcastMessage(p.getName() + " joined" + ChatColor.LIGHT_PURPLE + " PURPLE " + ChatColor.WHITE + "team");
+                    } else if (checkredteam(p) == true) {
+                        red.getEntries().remove(p);
+                        purple.addPlayer(p);
+                        p.sendMessage("You joined purple team");
+                        Bukkit.broadcastMessage(p.getName() + " joined" + ChatColor.LIGHT_PURPLE + " PURPLE " + ChatColor.WHITE + "team");
+                    } else if (checkyellowteam(p) == true) {
+                        yellow.getEntries().remove(p);
+                        purple.addPlayer(p);
+                        p.sendMessage("You joined purple team");
+                        Bukkit.broadcastMessage(p.getName() + " joined" + ChatColor.LIGHT_PURPLE + " PURPLE " + ChatColor.WHITE + "team");
+                    } else if (checkwhiteteam(p) == true) {
+                        white.getEntries().remove(p);
+                        purple.addPlayer(p);
+                        p.sendMessage("You joined purple team");
+                        Bukkit.broadcastMessage(p.getName() + " joined" + ChatColor.LIGHT_PURPLE + " PURPLE " + ChatColor.WHITE + "team");
+                    } else {
+                        purple.addPlayer(p);
+                        p.sendMessage("You joined purple team");
+                        Bukkit.broadcastMessage(p.getName() + " joined" + ChatColor.LIGHT_PURPLE + " PURPLE " + ChatColor.WHITE + "team");
+                    }
+
+
                     p.closeInventory();
                     break;
 
                 case "Yellow" :
-                    p.sendMessage("You joined yellow team");
-                    Bukkit.broadcastMessage(p.getName() + " joined" + ChatColor.YELLOW + " YELLOW " + ChatColor.WHITE + "team");
+
+                    if (checkyellowteam(p) == true) {
+                        yellow.getEntries().remove(p);
+                        p.sendMessage("You leaved yellow team");
+                    } else if (checkblueteam(p) == true) {
+                        blue.getEntries().remove(p);
+                        yellow.addPlayer(p);
+                        p.sendMessage("You joined yellow team");
+                        Bukkit.broadcastMessage(p.getName() + " joined" + ChatColor.YELLOW + " YELLOW " + ChatColor.WHITE + "team");
+                    } else if (checkgreenteam(p) == true) {
+                        green.getEntries().remove(p);
+                        yellow.addPlayer(p);
+                        p.sendMessage("You joined yellow team");
+                        Bukkit.broadcastMessage(p.getName() + " joined" + ChatColor.YELLOW + " YELLOW " + ChatColor.WHITE + "team");
+                    } else if (checkpurpleteam(p) == true) {
+                        purple.getEntries().remove(p);
+                        yellow.addPlayer(p);
+                        p.sendMessage("You joined yellow team");
+                        Bukkit.broadcastMessage(p.getName() + " joined" + ChatColor.YELLOW + " YELLOW " + ChatColor.WHITE + "team");
+                    } else if (checkredteam(p) == true) {
+                        red.getEntries().remove(p);
+                        yellow.addPlayer(p);
+                        p.sendMessage("You joined yellow team");
+                        Bukkit.broadcastMessage(p.getName() + " joined" + ChatColor.YELLOW + " YELLOW " + ChatColor.WHITE + "team");
+                    } else if (checkwhiteteam(p) == true) {
+                        white.getEntries().remove(p);
+                        yellow.addPlayer(p);
+                        p.sendMessage("You joined yellow team");
+                        Bukkit.broadcastMessage(p.getName() + " joined" + ChatColor.YELLOW + " YELLOW " + ChatColor.WHITE + "team");
+                    } else {
+                        yellow.addPlayer(p);
+                        p.sendMessage("You joined yellow team");
+                        Bukkit.broadcastMessage(p.getName() + " joined" + ChatColor.YELLOW + " YELLOW " + ChatColor.WHITE + "team");;
+                    }
+
+
                     p.closeInventory();
                     break;
 
                 case "White" :
-                    p.sendMessage("You joined white team");
-                    Bukkit.broadcastMessage(p.getName() + " joined" + ChatColor.BOLD + " WHITE " + ChatColor.RESET + "team");
+
+                    if (checkwhiteteam(p) == true) {
+                        white.getEntries().remove(p);
+                        p.sendMessage("You leaved white team");
+                    } else if (checkblueteam(p) == true) {
+                        blue.getEntries().remove(p);
+                        white.addPlayer(p);
+                        p.sendMessage("You joined white team");
+                        Bukkit.broadcastMessage(p.getName() + " joined" + ChatColor.BOLD + " WHITE " + ChatColor.RESET + "team");
+                    } else if (checkgreenteam(p) == true) {
+                        green.getEntries().remove(p);
+                        white.addPlayer(p);
+                        p.sendMessage("You joined white team");
+                        Bukkit.broadcastMessage(p.getName() + " joined" + ChatColor.BOLD + " WHITE " + ChatColor.RESET + "team");
+                    } else if (checkpurpleteam(p) == true) {
+                        purple.getEntries().remove(p);
+                        white.addPlayer(p);
+                        p.sendMessage("You joined white team");
+                        Bukkit.broadcastMessage(p.getName() + " joined" + ChatColor.BOLD + " WHITE " + ChatColor.RESET + "team");
+                    } else if (checkyellowteam(p) == true) {
+                        yellow.getEntries().remove(p);
+                        white.addPlayer(p);
+                        p.sendMessage("You joined white team");
+                        Bukkit.broadcastMessage(p.getName() + " joined" + ChatColor.BOLD + " WHITE " + ChatColor.RESET + "team");
+                    } else if (checkredteam(p) == true) {
+                        red.getEntries().remove(p);
+                        white.addPlayer(p);
+                        p.sendMessage("You joined white team");
+                        Bukkit.broadcastMessage(p.getName() + " joined" + ChatColor.BOLD + " WHITE " + ChatColor.RESET + "team");
+                    } else {
+                        white.addPlayer(p);
+                        p.sendMessage("You joined white team");
+                        Bukkit.broadcastMessage(p.getName() + " joined" + ChatColor.BOLD + " WHITE " + ChatColor.RESET + "team");
+                    }
+
+
                     p.closeInventory();
                     break;
             }
